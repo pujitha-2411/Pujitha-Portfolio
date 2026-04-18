@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
-import { MagneticButton } from "./MagneticButton";
+import { MagneticButton } from "../MagneticButton";
 
 const ROLES = [
   "AI / ML Engineer",
