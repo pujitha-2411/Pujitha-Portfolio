@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { SectionLabel } from "../SectionLabel";
+import portrait from "@/assets/pujitha-portrait.jpeg";
 
 const STATS = [
   { n: "03", l: "Internships" },
@@ -24,11 +25,15 @@ export function About() {
               transition={{ duration: 0.9 }}
               className="relative aspect-[4/5] w-full overflow-hidden rounded-sm border border-border"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-ember/30 via-background to-background" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-display text-[14rem] leading-none text-cream/10">P</span>
-              </div>
-              <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between font-mono text-[10px] uppercase tracking-[0.25em] text-cream-dim">
+              <img
+                src={portrait}
+                alt="Pujitha Kolakonda — AI/ML Engineer portrait"
+                className="absolute inset-0 h-full w-full object-cover object-center grayscale-[20%] contrast-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+              <div className="absolute inset-0 mix-blend-multiply bg-gradient-to-br from-ember/10 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between font-mono text-[10px] uppercase tracking-[0.25em] text-cream">
                 <span>Hyderabad / IN</span>
                 <span>Est. 2026</span>
               </div>
