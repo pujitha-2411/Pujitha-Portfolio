@@ -24,7 +24,6 @@ const CERTS = [
   "Deep Learning in Ecological Studies — IIRS",
   "Oracle Cloud Infrastructure AI Foundation (2025)",
   "McKinsey Forward Program",
-  "NSS — Directed 15+ campus events, managed 20+ volunteers",
 ];
 
 export function Education() {

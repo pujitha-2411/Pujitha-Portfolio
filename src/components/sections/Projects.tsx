@@ -4,20 +4,20 @@ import { SectionLabel } from "../SectionLabel";
 
 const PROJECTS = [
   {
-    name: "LEXI",
-    sub: "RAG Conversational Agent",
-    year: "2025",
-    desc: "RAG-based chatbot with 92% response accuracy and webhook architecture sustaining 90% uptime under load.",
-    tech: ["Gemini API", "RAG", "n8n", "Webhooks"],
-    span: "md:col-span-2 md:row-span-2",
-    accent: true,
-  },
-  {
     name: "Cat Emotion Detection",
     sub: "Multi-modal Classifier",
     year: "2026",
     desc: "Fuses ResNet-18 facial features with Librosa audio spectrograms — 85%+ accuracy across 5 emotion classes on 2,000+ samples.",
     tech: ["ResNet-18", "Librosa", "PyTorch"],
+    span: "md:col-span-2 md:row-span-2",
+    accent: true,
+  },
+  {
+    name: "LEXI",
+    sub: "RAG Conversational Agent",
+    year: "2025",
+    desc: "RAG-based chatbot with 92% response accuracy and webhook architecture sustaining 90% uptime under load.",
+    tech: ["Gemini API", "RAG", "n8n", "Webhooks"],
     span: "md:col-span-1 md:row-span-2",
   },
   {
@@ -26,15 +26,7 @@ const PROJECTS = [
     year: "2024",
     desc: "Four classifiers (diabetes, thyroid, Parkinson's, heart) at 80–90% accuracy with 25% lower inference latency.",
     tech: ["Scikit-learn", "Streamlit", "Python"],
-    span: "md:col-span-2 md:row-span-1",
-  },
-  {
-    name: "AnimateItNow",
-    sub: "GSSoC '25 — OSS",
-    year: "2025",
-    desc: "Diagnosed and resolved front-end rendering bug (Issue #1577); merged PR shipped to 200+ active users.",
-    tech: ["Open Source", "Front-end"],
-    span: "md:col-span-1 md:row-span-1",
+    span: "md:col-span-3 md:row-span-1",
   },
 ];
 

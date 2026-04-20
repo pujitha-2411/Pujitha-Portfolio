@@ -53,52 +53,70 @@ export function Experience() {
           {/* spine */}
           <div className="absolute left-3 top-0 bottom-0 w-px bg-border md:left-1/2" />
 
-          <div className="space-y-16">
-            {JOBS.map((j, i) => (
-              <motion.article
-                key={j.role + j.date}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.7 }}
-                className={`relative grid gap-6 md:grid-cols-2 md:gap-12 ${
-                  i % 2 === 0 ? "" : "md:[&>*:first-child]:order-2"
-                }`}
-              >
-                {/* dot */}
-                <span className="absolute left-3 top-2 -translate-x-1/2 md:left-1/2">
-                  <span className="block h-3 w-3 rounded-full bg-ember ember-glow" />
-                </span>
+          <div className="space-y-20">
+            {JOBS.map((j, i) => {
+              const isLeft = i % 2 === 0;
+              return (
+                <motion.article
+                  key={j.role + j.date}
+                  initial={{ opacity: 0, x: isLeft ? -60 : 60, y: 20 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative grid gap-6 md:grid-cols-2 md:gap-12"
+                >
+                  {/* dot */}
+                  <span className="absolute left-3 top-2 -translate-x-1/2 md:left-1/2">
+                    <span className="block h-3 w-3 rounded-full bg-ember ember-glow" />
+                  </span>
 
-                {/* date column */}
-                <div className={`pl-10 md:pl-0 ${i % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"}`}>
-                  <div className="font-mono text-xs uppercase tracking-[0.25em] text-ember">
-                    {j.date}
+                  {/* date column */}
+                  <div
+                    className={`pl-10 md:pl-0 ${
+                      isLeft
+                        ? "md:order-1 md:text-right md:pr-12"
+                        : "md:order-2 md:pl-12"
+                    }`}
+                  >
+                    <div className="font-mono text-xs uppercase tracking-[0.25em] text-ember">
+                      {j.date}
+                    </div>
+                    <div className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-cream-dim">
+                      {j.location}
+                    </div>
                   </div>
-                  <div className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-cream-dim">
-                    {j.location}
-                  </div>
-                </div>
 
-                {/* card */}
-                <div className={`pl-10 md:pl-0 ${i % 2 === 0 ? "md:pl-12" : "md:pr-12 md:text-right"}`}>
-                  <div className="card-glow-hover rounded-sm border border-border bg-card p-6 md:p-8">
-                    <h3 className="font-display text-2xl md:text-3xl">{j.role}</h3>
-                    <p className="mt-1 font-mono text-xs uppercase tracking-[0.25em] text-ember">
-                      {j.company}
-                    </p>
-                    <ul className={`mt-5 space-y-3 text-sm leading-relaxed text-cream-dim ${i % 2 === 0 ? "" : "md:text-right"}`}>
-                      {j.bullets.map((b) => (
-                        <li key={b} className="flex gap-3">
-                          <span className="mt-2 h-px w-3 flex-shrink-0 bg-ember" />
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* card */}
+                  <div
+                    className={`pl-10 md:pl-0 ${
+                      isLeft ? "md:order-2 md:pl-12" : "md:order-1 md:pr-12 md:text-right"
+                    }`}
+                  >
+                    <div className="card-glow-hover rounded-sm border border-border bg-card p-6 md:p-8">
+                      <h3 className="font-display text-2xl md:text-3xl">{j.role}</h3>
+                      <p className="mt-1 font-mono text-xs uppercase tracking-[0.25em] text-ember">
+                        {j.company}
+                      </p>
+                      <ul
+                        className={`mt-5 space-y-3 text-sm leading-relaxed text-cream-dim ${
+                          isLeft ? "" : "md:text-right"
+                        }`}
+                      >
+                        {j.bullets.map((b) => (
+                          <li
+                            key={b}
+                            className={`flex gap-3 ${isLeft ? "" : "md:flex-row-reverse"}`}
+                          >
+                            <span className="mt-2 h-px w-3 flex-shrink-0 bg-ember" />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </motion.article>
-            ))}
+                </motion.article>
+              );
+            })}
           </div>
         </div>
       </div>
